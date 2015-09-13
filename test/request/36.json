@@ -1,0 +1,19 @@
+{
+  "payload": [ {
+    "country": "UK",
+    "description": "What's life like when you have enough children to field your own football team?",
+    "episodeCount": 3,
+    "genre": "Reality",
+    "language": "English",
+    "nextEpisode": null,
+    "primaryColour": "#ff7800",
+    "drm":null,
+    "seasons": [
+      {
+        "slug": "show/16kidsandcounting/season/1"
+      }
+    ],
+    "title": "16 Kids and Counting",
+    "tvChannel": "GEM"
+  } ]
+}

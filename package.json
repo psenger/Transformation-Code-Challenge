@@ -1,0 +1,50 @@
+{
+  "name": "Transformation-Code-Challenge",
+  "version": "1.0.0",
+  "description": "Transformation code challenge",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bluebird": "~2.10.0",
+    "body-parser": "~1.13.3",
+    "curry": "~1.2.0",
+    "express": "~4.13.3",
+    "jsdoc-to-markdown": "~1.1.1",
+    "request": "~2.61.0"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node_modules/mocha/bin/mocha --recursive --ui bdd --reporter spec ./test/test-*.js",
+    "docs": "./node_modules/.bin/jsdoc2md --module-index-format table lib/*.js -t doc-template/README.md.hbs -d 3 --separators -l JavaScript > README.md",
+    "clean": "rm -r ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psenger/Transformation-Code-Challenge.git"
+  },
+  "keywords": [
+    "challenge"
+  ],
+  "author": "Philip A Senger <philip.a.senger@cngrgroup.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psenger/Transformation-Code-Challenge/issues"
+  },
+  "homepage": "https://github.com/psenger/Transformation-Code-Challenge",
+  "dependencies": {
+    "bluebird": "^2.10.0",
+    "body-parser": "~1.13.2",
+    "express": "~4.13.1"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^1.1.1",
+    "mocha": "^2.3.2",
+    "curry": "^1.2.0",
+    "request": "^2.61.0"
+  }
+}
