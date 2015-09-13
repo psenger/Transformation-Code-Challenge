@@ -35,7 +35,7 @@ If we send invalid JSON, You'll need to return a JSON response with HTTP status 
 
 ## Testing
 
-This application uses Mocah BDD style testing. Tests can be found in the directory ```test/``` Code coverage is located in
+This application uses Mocah BDD style testing. I should have written Unit tests, but there wasnt much logic here. Tests can be found in the directory ```test/``` Code coverage is located in
 
     npm run test
 
@@ -266,127 +266,126 @@ This application was deployed on Heroku. I had considered deploying to Apigee Ed
 
 ## Test results
 
-Running the tests are simple.
+Running the integration tests are simple.
 
 ```
 npm install
 npm test
 ```
 
-Transformation Code Challenge
-Given the service is running
-When I post application/xml
-:white_check_mark: should produce a 400 code
-:white_check_mark: should produce Json Body that has an error message
-When I post text/xml
-:white_check_mark: should produce a 400 code
-:white_check_mark: should produce Json Body that has an error message
-When I post xml as json
-:white_check_mark: should produce a 400 code
-:white_check_mark: should produce Json Body that has an error message
-When I post an empty body
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that has no values
-When I pass a Body that has valid data
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches
-When I pass a body.payload that is missing
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file /Users/psenger/Documents/Dev/Transfor
-mation-Code-Challenge/test/request/6.json
-When I pass a body.payload that is undefined
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file /Users/psenger/Documents/Dev/Transfor
-mation-Code-Challenge/test/request/7.json
-When I pass a body.payload that is null
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file /Users/psenger/Documents/Dev/Transfor
-mation-Code-Challenge/test/request/8.json
-When I pass a body.payload that is object literal
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file /Users/psenger/Documents/Dev/Transfor
-mation-Code-Challenge/test/request/9.json
-When I pass a body.payload that is number
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/10.json
-When I pass a body.payload that is string
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/11.json
-When I pass a body.payload that is float
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/12.json
-When I pass a body.payload that is boolean
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/15.json
-When I pass a body.payload that is empty
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/13.json
-When I pass a body.payload contains that is null
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/19.json
-When I pass a body.payload contains that is empty object literal
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/21.json
-When I pass a body.payload contains that is number
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/22.json
-When I pass a body.payload contains that is string
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/23.json
-When I pass a body.payload contains that is float
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/24.json
-When I pass a body.payload contains that is boolean
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/25.json
-When I pass a body.payload contains that is mix of null, undefined, empty, object, literal, number, string, float
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/26.json
-When I pass a body.payload contains that is mix of null, empty object literal, number, string, float, valid object
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/27.json
-When I pass a show that is missing all valid values
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/31.json
-When I pass a show.drm that is null
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/36.json
-When I pass a show.drm that is object
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/37.json
-When I pass a show.drm that is number
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/38.json
-When I pass a show.drm that is string
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/39.json
-When I pass a show.drm that is valid true that will produce results
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/40.json
-When I pass a show.drm that is valid false that will not produce results
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/41.json
-When I pass a show.episodeCount that is undefined
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/44.json
-When I pass a show.episodeCount that is null
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/45.json
-When I pass a show.episodeCount that is object
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/46.json
-When I pass a show.episodeCount that is string
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/47.json
-When I pass a show.episodeCount that is valid number 0
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/48.json
-When I pass a show.episodeCount that is valid number 5
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/49.json
-When I pass a valid final mixed payload
-:white_check_mark: should produce a 200 code
-:white_check_mark: should produce a JSON body that matches test repose in file test/request/50.json
+    Transformation Code Challenge
+    Given the service is running
+    When I post application/xml
+            ✓ should produce a 400 code
+            ✓ should produce Json Body that has an error message
+    When I post text/xml
+            ✓ should produce a 400 code
+            ✓ should produce Json Body that has an error message
+    When I post xml as json
+            ✓ should produce a 400 code
+            ✓ should produce Json Body that has an error message
+    When I post an empty body
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that has no values
+    When I pass a Body that has valid data
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches
+    When I pass a body.payload that is missing
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/6.json
+    When I pass a body.payload that is undefined
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/7.json
+    When I pass a body.payload that is null
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/8.json
+    When I pass a body.payload that is object literal
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/9.json
+    When I pass a body.payload that is number
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/10.json
+    When I pass a body.payload that is string
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/11.json
+    When I pass a body.payload that is float
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/12.json
+    When I pass a body.payload that is boolean
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/15.json
+    When I pass a body.payload that is empty
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/13.json
+    When I pass a body.payload contains that is null
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/19.json
+    When I pass a body.payload contains that is empty object literal
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/21.json
+    When I pass a body.payload contains that is number
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/22.json
+    When I pass a body.payload contains that is string
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/23.json
+    When I pass a body.payload contains that is float
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/24.json
+    When I pass a body.payload contains that is boolean
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/25.json
+    When I pass a body.payload contains that is mix of null, undefined, empty, object, literal, number, string, float
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/26.json
+    When I pass a body.payload contains that is mix of null, empty object literal, number, string, float, valid object
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/27.json
+    When I pass a show that is missing all valid values
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/31.json
+    When I pass a show.drm that is null
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/36.json
+    When I pass a show.drm that is object
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/37.json
+    When I pass a show.drm that is number
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/38.json
+    When I pass a show.drm that is string
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/39.json
+    When I pass a show.drm that is valid true that will produce results
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/40.json
+    When I pass a show.drm that is valid false that will not produce results
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/41.json
+    When I pass a show.episodeCount that is undefined
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/44.json
+    When I pass a show.episodeCount that is null
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/45.json
+    When I pass a show.episodeCount that is object
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/46.json
+    When I pass a show.episodeCount that is string
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/47.json
+    When I pass a show.episodeCount that is valid number 0
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/48.json
+    When I pass a show.episodeCount that is valid number 5
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/49.json
+    When I pass a valid final mixed payload
+            ✓ should produce a 200 code
+            ✓ should produce a JSON body that matches test repose in file test/request/50.json
+    
+    
+    72 passing (2m)
 
 ## API
 
