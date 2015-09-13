@@ -12,7 +12,7 @@ var assert = require ( 'assert' ),
 Promise.promisifyAll ( fs );
 Promise.promisifyAll ( request );
 
-var url = 'http://localhost:3000/';
+var url = 'https://intense-woodland-7710.herokuapp.com';
 
 function readFile ( fileName ) {
     return fs.readFileAsync ( fileName, 'utf8' );
